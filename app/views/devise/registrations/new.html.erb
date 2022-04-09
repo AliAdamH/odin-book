@@ -1,25 +1,50 @@
-<h2>Sign up</h2>
-
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="box">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
+  <div class="field">
+    <div class="control">
+          <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
+                input_html: { class: "input" }, label_html: { class: 'label'}, wrapper: false %>
+    </div>
+  </div>
+    <div class="field">
+    <div class="control">
+        <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+                input_html: { class: "input" }, label_html: { class: 'label'}, wrapper: false %>
+    </div>
+  </div>
+    <div class="field">
+    <div class="control">
+        <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { class: "input" }, label_html: { class: 'label'}, wrapper: false %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="level">
+    <div class="level-item is-justify-content-flex-end">
+      <%= f.button :submit, "Sign up", class: 'button is-link is-outlined' %>
+    </div>
+</div>
+
+  <div class="field">
+    <div class="control">
+      
+    </div>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
