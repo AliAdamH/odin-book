@@ -1,3 +1,19 @@
+<% content_for :notification do %>
+   <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Notifications
+        </a>
+      <div class="navbar-dropdown">
+      <% @requests.each do |r| %>
+        <hr class="navbar-divider">
+        <a class="navbar-item">
+          <%= r.requester_id%>
+        </a>
+      <% end %>
+      </div>  
+    </div>
+<% end %>
+
 <section class="section has-background-black">
   <div class="container">
     <div class="columns">
