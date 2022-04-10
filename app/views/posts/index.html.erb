@@ -11,7 +11,10 @@
               <strong><%= r.requester.username %></strong>
             </div>
             <div class="column is-4">
-              <button class="button is-small is-primary">Accept</button>
+              <%= form_with url: friendships_path do |f| %>
+                <%= f.hidden_field :friend_id, value: r.requester_id %>
+                <%= f.submit 'Accept', class:'button is-small is-primary' %>
+              <% end %>
             </div>
             <div class="column is-4">
               <button class="button is-small is-danger is-outlined">Refuse</button>
