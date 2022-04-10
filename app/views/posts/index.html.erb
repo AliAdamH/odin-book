@@ -1,14 +1,23 @@
 <% content_for :notification do %>
    <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          Notifications
+          Friend Requests
         </a>
       <div class="navbar-dropdown">
       <% @requests.each do |r| %>
-        <hr class="navbar-divider">
-        <a class="navbar-item">
-          <%= r.requester_id%>
-        </a>
+        <div class="navbar-item">
+          <div class="columns">
+            <div class="column is-4">
+              <strong><%= r.requester.username %></strong>
+            </div>
+            <div class="column is-4">
+              <button class="button is-small is-primary">Accept</button>
+            </div>
+            <div class="column is-4">
+              <button class="button is-small is-danger is-outlined">Refuse</button>
+            </div>
+            </div>
+        </div>
       <% end %>
       </div>  
     </div>

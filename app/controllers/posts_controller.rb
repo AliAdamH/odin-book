@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @requests = current_user.to_accept_requests
+    @requests = current_user.to_accept_requests.includes(:requester)
     @post = current_user.posts.build
     @posts = Post.all
   end
