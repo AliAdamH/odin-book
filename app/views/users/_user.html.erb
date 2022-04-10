@@ -7,7 +7,11 @@
             <%= user.username %>
         </div>
         <div class="level-right">
-            <%= link_to 'See profile', user_path(user), class:'button is-primary'%>
+            <%= link_to 'See profile', user_path(user), class:'button  level-item is-primary' %>
+            <%= form_with url: friendship_requests_path do |f| %>
+                <%= f.hidden_field :addressee_id, value: user.id %>
+                <%= f.submit 'Send friend request', class: 'button level-item is-dark' %>
+            <% end %>
         </div>
     </div>
 </div>
