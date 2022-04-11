@@ -1,0 +1,8 @@
+<%= form_with(model: [ post, Comment.new ]) do |form| %>
+  <div class="field">
+    <div class="control">
+        <%f.label :context, 'Add a comment', class: 'label' %>
+        <%f.text_area :context, size: '60x5', class: 'textarea' %>
+    </div>
+  </div>
+<% end %>
