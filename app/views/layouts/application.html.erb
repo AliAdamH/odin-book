@@ -45,6 +45,11 @@
               <% end %>
               <div class="buttons has-text-weight-bold navbar-item">
                 <% if user_signed_in? %>
+                  <% if current_user.profile %>
+                    <%= link_to 'Profile', profile_path(current_user), class: 'button is-success is-outlined'%>
+                  <% else %>
+                    <%= link_to 'Profile', new_profile_path, class: 'button is-success is-outlined'%>
+                  <% end %>
                   <%= link_to 'Sign out',destroy_user_session_path,  method: :delete , class: 'button is-danger' %>
                   <%= link_to 'Users Index', users_path, class: 'button is-success is-outlined'%>
                 <% else %>
