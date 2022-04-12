@@ -4,24 +4,13 @@
           Friend Requests
         </a>
       <div class="navbar-dropdown">
-      <% @requests.each do |r| %>
-        <div class="navbar-item">
-          <div class="columns">
-            <div class="column is-4">
-              <strong><%= r.requester.username %></strong>
-            </div>
-            <div class="column is-4">
-              <%= form_with url: friendships_path do |f| %>
-                <%= f.hidden_field :friend_id, value: r.requester_id %>
-                <%= f.submit 'Accept', class:'button is-small is-primary' %>
-              <% end %>
-            </div>
-            <div class="column is-4">
-              <button class="button is-small is-danger is-outlined">Refuse</button>
-            </div>
-            </div>
-        </div>
-      <% end %>
+        <% unless @requests.empty? %>
+          <%= render(partial:'request', collection: @requests) %>
+        <% else %>
+          <p class="navbar-item has-text-centered">
+            No pending friend requests
+          </p>
+        <% end %>
       </div>  
     </div>
 <% end %>
