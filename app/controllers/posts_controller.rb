@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     @requests = current_user.to_accept_requests.includes(:requester)
     @post = current_user.posts.build
-    @posts = Post.all
+    @posts = Post.timeline(current_user)
   end
 
   # GET /posts/1 or /posts/1.json
