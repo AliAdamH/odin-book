@@ -1,2 +1,4 @@
 <%= profile.first_name %>
 <%= profile.last_name %>
+<figure class='image is-128x128'>
+<%= image_tag profile.picture_url, class:'is-rounded', alt: "#{profile.first_name} picture" %>
