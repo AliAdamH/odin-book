@@ -60,3 +60,5 @@ gem "devise", "~> 4.8"
 gem "bulma-rails", "~> 0.9.3"
 
 gem "simple_form", "~> 5.1"
+
+gem 'carrierwave', '~> 2.0'
