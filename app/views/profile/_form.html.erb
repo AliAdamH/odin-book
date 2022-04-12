@@ -1,0 +1,23 @@
+<%= form_with model: profile do |f| %>
+    <div class="field">
+        <div class="control">
+            <%= f.label :first_name, 'First Name: ' %>
+            <%= f.textfield :first_name, class:'input'%>
+        </div>
+    </div>
+    <div class="field">
+        <div class="control">
+            <%= f.label :last_name, 'Last Name: ' %>
+            <%= f.textfield :last_name, class:'input'%>
+        </div>
+    </div>
+    <div class="field">
+        <div class="control">
+            <%= f.label :last_name, 'Upload your profile picture' %>
+            <%= f.file_field :last_name, class:'input'%>
+        </div>
+    </div>
+    <div class="level">
+        <%f.submit :add_profile_info, class: 'button is-primary' %>
+    </div>
+<% end %>
