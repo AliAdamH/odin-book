@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = curren_user.comments.build(comment_params)
+    @comment = current_user.comments.build(comment_params)
     unless @comment.save
       flash[:alert] = 'Failed to register comment'
     end
