@@ -49,12 +49,14 @@
                         <% end %>
                         <small class="level-item"><%= post.likes.count %></small>
                 </div>
-                <div class="level-right">
-                    <%# Temporary way of seeing comments%>
-                    <%= link_to post, class:'level-item' do %>
-                        <small>10 comments</small>
-                    <% end %>
-                </div>
+                <% if action_name == 'index' %>
+                    <div class="level-right">
+                        <%# Temporary way of seeing comments%>
+                        <%= link_to post, class:'level-item' do %>
+                            <small>10 comments</small>
+                        <% end %>
+                    </div>
+                <% end %>
             </nav>
         </div>
     </article>
