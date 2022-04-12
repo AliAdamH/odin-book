@@ -46,7 +46,7 @@
               <div class="buttons has-text-weight-bold navbar-item">
                 <% if user_signed_in? %>
                   <% if current_user.profile %>
-                    <%= link_to 'Profile', profile_path(current_user), class: 'button is-success is-outlined'%>
+                    <%= link_to 'Profile', profile_path, class: 'button is-success is-outlined'%>
                   <% else %>
                     <%= link_to 'Profile', new_profile_path, class: 'button is-success is-outlined'%>
                   <% end %>
