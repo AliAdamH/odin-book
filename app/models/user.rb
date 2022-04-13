@@ -17,7 +17,8 @@ class User < ApplicationRecord
 
 
   def self.not_friend_of(user)
-    where('id NOT IN (?)', user.friends.ids)
+    excluded = [user.id, user.friends.ids]
+    where.not(id: excluded)
   end
 
   def self.from_omniauth(auth)
