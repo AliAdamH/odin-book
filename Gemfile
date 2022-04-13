@@ -62,3 +62,9 @@ gem "bulma-rails", "~> 0.9.3"
 gem "simple_form", "~> 5.1"
 
 gem 'carrierwave', '~> 2.0'
+
+gem 'omniauth-facebook'
+
+gem "figaro", "~> 1.2"
+
+gem 'omniauth-rails_csrf_protection'
