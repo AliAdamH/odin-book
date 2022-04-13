@@ -15,11 +15,6 @@
             </div>
             <nav class="level is-mobile">
                 <div class="level-left">
-                    <%= link_to post, class: 'level-item' do %>
-                        <span class="icon">
-                            <i class="fa fa-link" aria-hidden="true"></i>
-                        </span>
-                    <% end %>
                         <% if owner? post %>
                             <%= link_to edit_post_path(post), class: 'level-item' do %>
                                 <span class="icon">
@@ -52,7 +47,7 @@
                     <div class="level-right">
                         <%# Temporary way of seeing comments%>
                         <%= link_to post, class:'level-item' do %>
-                            <small>10 comments</small>
+                            <small><%= post.comments.size %> comments</small>
                         <% end %>
                     </div>
                 <% end %>
