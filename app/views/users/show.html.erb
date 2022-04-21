@@ -5,14 +5,19 @@
                 <h2 class="subtitle is-4 has-text-centered">Profile informations</h2>
                 <%= render partial: 'info', locals: {user: @user }%>
             </div>
-            <div class="column is-5">
-                <h2 class="subtitle is-4 has-text-centered"> Posts </h2>
-                <%= render partial: 'posts/post', collection: @user_posts %>
+            <div class="column is-6">
+                <h2 class="subtitle is-4"> Posts </h2>
+                <% unless @user_posts.empty? %>
+                    <%= render(partial: 'posts/post', collection: @user_posts)%>
+                <% else %>
+                    <div class="box has-text-centered has-text-weight-bold">Woooo it's quiet in here, there are no posts</div>
+                <% end %>
             </div>
-            <div class="column is-4">
+            <div class="column is-3">
                 <h2 class="subtitle is-4 has-text-centered"> Friends's list </h2>
                 <div class="box">
                     <%# Display the user's friend list here %>
+                    <%= render partial: 'friend', collection: @friends %>
                 </div>
             </div>
         </div>

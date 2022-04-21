@@ -1,0 +1,14 @@
+<div class="block">
+<%= link_to user_path(friend), class:'level-item' do %>
+<div class="level is-justify-content-flex-start">
+    <div class="level-left">
+        <figure class=" level-item image is-64x64">
+            <img class="is-rounded" src="<%= friend.picture_url || 'https://bulma.io/images/placeholders/64x64.png' %>" alt="">
+        </figure>
+        <div class="level-item">
+            <%= friend.username || friend.email %>
+        </div>
+    </div>
+</div>
+<% end %>
+</div>
