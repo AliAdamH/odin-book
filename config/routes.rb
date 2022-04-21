@@ -11,6 +11,4 @@ Rails.application.routes.draw do
   resources :friendships, only: %i[create]
 
   resources :likes, only: %i[create destroy]
-  resource :profile, only: %i[show new create]
-  resolve('Profile') { [:profile] }
 end
