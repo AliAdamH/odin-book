@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-image">
+        <figure class='image is-3by2'>
+        <% if user.picture? %>
+            
+            <%= image_tag user.picture_url, size:'128x128', alt: 'Profile Picture' %>
+            </figure>
+        <% else %>
+            <%= image_tag 'https://bulma.io/images/placeholders/128x128.png', size:'128x128', alt: 'Profile Picture' %>
+        <% end %>
+        </figure>
+    </div>
+    <div class="card-content has-text-centered">
+        <p class="content"><strong>Username :</strong> <%= user.username || 'default_user_name' %></p>
+        <% if current_user == user %>
+            <%= link_to 'Edit profile info', edit_user_path(user), class:'button is-primary'%>
+        <% end %>
+    </div>
+</div>

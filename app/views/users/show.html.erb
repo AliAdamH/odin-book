@@ -3,24 +3,14 @@
         <div class="columns">
             <div class="column is-3">
                 <h2 class="subtitle is-4 has-text-centered">Profile informations</h2>
-                <div class="box has-text-centered">
-                <p class="content"><%= @user.username || 'default_user_name' %></p>
-                <div class="content has-text-centered">
-                    <% if @user.picture? %>
-                        <%= image_tag @user.picture_url, size:'64x64', alt: 'Profile Picture' %>
-                    <% else %>
-                        <p>You have no profile picture click here to upload one :</p>
-                        <%= link_to 'Edit profile info', edit_user_path(@user), class:'button is-primary'%>
-                    <% end %>
-                </div>
-                </div>
+                <%= render partial: 'info', locals: {user: @user }%>
             </div>
-            <div class="column is-6">
-                <h2 class="subtitle is-4 has-text-centered">My posts </h2>
+            <div class="column is-5">
+                <h2 class="subtitle is-4 has-text-centered"> Posts </h2>
                 <%= render partial: 'posts/post', collection: @user_posts %>
             </div>
-            <div class="column is-3">
-                <h2 class="subtitle is-4 has-text-centered">My Friends's list </h2>
+            <div class="column is-4">
+                <h2 class="subtitle is-4 has-text-centered"> Friends's list </h2>
                 <div class="box">
                     <%# Display the user's friend list here %>
                 </div>
