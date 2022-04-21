@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :likes
   has_many :comments
-  
+  mount_uploader :picture, PictureUploader
   has_many :friendships
   has_many :friends, through: :friendships
 
