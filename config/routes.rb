@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'profile/create'
+
   resources :posts do 
     resources :comments, only: %i[create]
   end
