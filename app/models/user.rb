@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
 
   def self.not_friend_of(user)
-    excluded = [user.id, user.friends.ids]
+    excluded = [user.id, user.friends.ids].flatten
     where.not(id: excluded)
   end
 

@@ -7,6 +7,7 @@ class FriendshipsController < ApplicationController
     @reciprocal = Friendship.new(user_id: params[:friend_id], friend_id: current_user.id)
 
     if @friendship.save and @reciprocal.save
+      FriendshipRequest.find(params[:request_id]).accepted!
       flash[:notice] = "Success ! "
       redirect_back fallback_location: root_path
     else

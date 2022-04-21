@@ -6,6 +6,7 @@
     <div class="column is-4">
         <%= form_with url: friendships_path do |f| %>
         <%= f.hidden_field :friend_id, value: request.requester_id %>
+        <%= f.hidden_field :request_id, value: request.id %>
         <%= f.submit 'Accept', class:'button is-small is-primary' %>
         <% end %>
     </div>
