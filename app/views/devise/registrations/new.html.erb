@@ -15,6 +15,14 @@
   </div>
     <div class="field">
     <div class="control">
+          <%= f.input :username,
+                required: true,
+                autofocus: true,
+                input_html: { class: "input" }, label_html: { class: 'label'}, wrapper: false %>
+    </div>
+  </div>
+    <div class="field">
+    <div class="control">
         <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
