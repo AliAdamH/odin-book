@@ -16,7 +16,10 @@ class User < ApplicationRecord
 
 
   def self.not_friend_of(user)
-    excluded = [user.id, user.friends.ids].flatten
+    excluded_requesters = user.to_accept_requests.pluck(:requester_id)
+    excluded_addressees = user.friendship_requests.pluck(:addressee_id)
+    excluded_friends = [user.id, user.friends.ids].flatten
+    excluded = (excluded_requesters + excluded_addressees + excluded_friends).uniq
     where.not(id: excluded)
   end
 
