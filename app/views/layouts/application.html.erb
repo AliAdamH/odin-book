@@ -26,7 +26,7 @@
     <nav class="navbar is-link is-mobile is-marginless">
       <div class="navbar-brand">
           <div class="navbar-item">
-            <a href="<%= root_path %>">
+            <a href="<%= user_signed_in? ? authenticated_root_path : unauthenticated_root_path %>">
               <h1 class="title">
                   Odin Book
               </h1> 
@@ -45,7 +45,7 @@
               <% end %>
               <div class="buttons has-text-weight-bold navbar-item">
                 <% if user_signed_in? %>
-                  <%= link_to 'Feed', root_path, class: 'button is-success is-outlined'%>
+                  <%= link_to 'Feed', authenticated_root_path, class: 'button is-success is-outlined'%>
                   <%= link_to 'Profile', user_path(current_user), class: 'button is-success is-outlined'%>
                   <%= link_to 'Sign out',destroy_user_session_path,  method: :delete , class: 'button is-danger' %>
                   <%= link_to 'Users Index', users_path, class: 'button is-success is-outlined'%>

@@ -9,7 +9,7 @@ class FriendshipsController < ApplicationController
     if @friendship.save and @reciprocal.save
       FriendshipRequest.find(params[:request_id]).accepted!
       flash[:notice] = "Success ! "
-      redirect_back fallback_location: root_path
+      redirect_back fallback_location: authenticated_root_path
     else
       flash.now[:alert] = "Failure to befriend user "
       render 'posts/index'

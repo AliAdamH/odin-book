@@ -6,7 +6,7 @@ class FriendshipRequestsController < ApplicationController
 
     if @request.save
       flash[:notice] = "Your request have been successfully sent"
-      redirect_back fallback_location: root_path
+      redirect_back fallback_location: authenticated_root_path
     else
       flash.now[:alert] = "Your request has failed"
       render 'users/index'

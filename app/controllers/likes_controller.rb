@@ -4,7 +4,7 @@ class LikesController < ApplicationController
 
    if @like.save
 	flash[:notice] = 'Successfully liked the post '
-	redirect_back fallback_location: root_path
+	redirect_back fallback_location: authenticated_root_path
    else
         flash.now[:alert] = 'Could not like the post'
 	render 'posts/index'
@@ -15,7 +15,7 @@ class LikesController < ApplicationController
   def destroy
     @like = current_user.likes.find(params[:id])
     @like.destroy
-    redirect_back fallback_location: root_path
+    redirect_back fallback_location: authenticated_root_path
   end
 
 
