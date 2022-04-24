@@ -13,7 +13,12 @@ class User < ApplicationRecord
   mount_uploader :picture, PictureUploader
   has_many :friendships
   has_many :friends, through: :friendships
+  
+  after_create :send_success_email
 
+  def send_success_email
+    UserMailer.with(user: self).success_email.deliver_later
+  end
 
   def self.not_friend_of(user)
     excluded_requesters = user.to_accept_requests.pluck(:requester_id)
