@@ -73,5 +73,4 @@ Instead we use this 'trick' to *point back to the Users table* whenever we query
     * Image uploading with [Carrierwave](https://github.com/carrierwaveuploader/carrierwave)
 
 2. Too many redirections :
-    The app could make use of [Hotwire](https://github.com/hotwired/) to avoid
-    all the unnecessary redirects upon POST requests, e.g: Liking a post should not refresh the entire page.
+    The app could make use of AJAX to avoid all the unnecessary redirects upon POST requests, e.g: Liking a post should not refresh the entire page.
