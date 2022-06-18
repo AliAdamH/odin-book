@@ -69,3 +69,7 @@ gem "figaro", "~> 1.2"
 
 gem 'omniauth-rails_csrf_protection'
 gem "letter_opener", group: :development
+
+gem "rspec-rails", "~> 5.1", :groups => [:development, :test]
+gem "factory_bot_rails", "~> 6.2", :groups => [:development, :test]
+gem "rails-controller-testing", "~> 1.0", :groups => [:development, :test]
