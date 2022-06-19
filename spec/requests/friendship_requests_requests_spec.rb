@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'FriendshipRequests' do
+RSpec.describe 'FriendshipRequests', type: :request do
 
   let(:user) { create(:user) }
 
@@ -25,7 +25,7 @@ RSpec.describe 'FriendshipRequests' do
       friendship_request = create(:friendship_request, addressee: user)
 
       delete friendship_request_path(friendship_request)
-      
+
       expect(response.status).to eq 302
       expect(response).to redirect_to(authenticated_root_path)
     end
