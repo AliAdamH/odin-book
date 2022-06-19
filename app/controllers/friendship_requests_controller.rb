@@ -13,6 +13,12 @@ class FriendshipRequestsController < ApplicationController
     end
   end
 
+  def destroy
+    @request = FriendshipRequest.find(params[:id])
+    @request.destroy
+    redirect_to authenticated_root_path
+  end
+
   private
 
   def friendship_request_params
